@@ -1,24 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DatePickerApp_JacobM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="pkf-kL-mfb">
+                                <rect key="frame" x="0.0" y="94" width="414" height="59"/>
+                            </datePicker>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="spp-9q-mY8">
+                                <rect key="frame" x="0.0" y="220" width="414" height="216"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1aT-vy-kYm">
+                                <rect key="frame" x="70" y="434" width="274" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Button2"/>
+                                <connections>
+                                    <action selector="button2Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="og8-zE-mMy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Te3-BV-V04">
+                                <rect key="frame" x="50" y="513" width="314" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="To View2"/>
+                                <connections>
+                                    <segue destination="iJF-oI-RMc" kind="show" id="fFw-uJ-63y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ef-OW-8om">
+                                <rect key="frame" x="70" y="181" width="274" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Button"/>
+                                <connections>
+                                    <action selector="getCurrentDateTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JV1-fU-Dbw"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1aT-vy-kYm" secondAttribute="trailing" constant="70" id="2ZD-EQ-WkP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Te3-BV-V04" secondAttribute="trailing" constant="50" id="2Zt-Q6-jaZ"/>
+                            <constraint firstItem="pkf-kL-mfb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8vn-Ho-yks"/>
+                            <constraint firstItem="spp-9q-mY8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="176" id="LAd-ea-0WY"/>
+                            <constraint firstItem="5ef-OW-8om" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="137" id="PxR-xg-Ptc"/>
+                            <constraint firstItem="5ef-OW-8om" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="a0O-Qd-ppe"/>
+                            <constraint firstItem="spp-9q-mY8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bLn-wD-SWw"/>
+                            <constraint firstItem="1aT-vy-kYm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="kZU-uQ-UgS"/>
+                            <constraint firstItem="pkf-kL-mfb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="kxc-hm-XXt"/>
+                            <constraint firstItem="1aT-vy-kYm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="390" id="l9C-1J-cIA"/>
+                            <constraint firstItem="pkf-kL-mfb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lR9-r8-Px0"/>
+                            <constraint firstItem="spp-9q-mY8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="n65-wU-mfT"/>
+                            <constraint firstItem="Te3-BV-V04" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="469" id="qZr-dy-nSb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5ef-OW-8om" secondAttribute="trailing" constant="70" id="sSj-dd-42q"/>
+                            <constraint firstItem="Te3-BV-V04" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="wtC-Ah-Fcp"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myDatePicker" destination="pkf-kL-mfb" id="FRf-zg-J9a"/>
+                        <outlet property="myPicker" destination="spp-9q-mY8" id="pnQ-YJ-bpR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="69.642857142857139"/>
+        </scene>
+        <!--View Controller2-->
+        <scene sceneID="oKk-fn-zHN">
+            <objects>
+                <viewController id="iJF-oI-RMc" customClass="ViewController2" customModule="DatePickerApp_JacobM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K4e-VP-Zfg" customClass="View">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o3G-d4-i7Z">
+                                <rect key="frame" x="0.0" y="35" width="414" height="216"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMQ-vv-uYh">
+                                <rect key="frame" x="90" y="260" width="234" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Button3"/>
+                                <connections>
+                                    <action selector="button3Tapped:" destination="iJF-oI-RMc" eventType="touchUpInside" id="dTs-cQ-qpo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Dw3-Ng-icR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cMQ-vv-uYh" firstAttribute="leading" secondItem="Dw3-Ng-icR" secondAttribute="leading" constant="90" id="0nl-Qc-RS8"/>
+                            <constraint firstItem="cMQ-vv-uYh" firstAttribute="top" secondItem="Dw3-Ng-icR" secondAttribute="top" constant="260" id="Ed2-gS-Uis"/>
+                            <constraint firstItem="o3G-d4-i7Z" firstAttribute="leading" secondItem="Dw3-Ng-icR" secondAttribute="leading" id="R6j-96-gsk"/>
+                            <constraint firstItem="o3G-d4-i7Z" firstAttribute="trailing" secondItem="Dw3-Ng-icR" secondAttribute="trailing" id="fbs-cp-SBM"/>
+                            <constraint firstItem="Dw3-Ng-icR" firstAttribute="trailing" secondItem="cMQ-vv-uYh" secondAttribute="trailing" constant="90" id="oxh-7x-kxf"/>
+                            <constraint firstItem="o3G-d4-i7Z" firstAttribute="top" secondItem="Dw3-Ng-icR" secondAttribute="top" constant="35" id="xJG-i8-N32"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="AU4-Ct-stt"/>
+                    <connections>
+                        <outlet property="multiPicker" destination="o3G-d4-i7Z" id="dmH-Sy-dmf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tRz-EV-tBd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="778" y="70"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
